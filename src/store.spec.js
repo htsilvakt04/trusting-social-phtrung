@@ -7,7 +7,8 @@ describe('Redux Store', () => {
         const expected = {
             byId: {},
             IDs: [],
-            currentPaginationIndex: 1
+            currentPaginationIndex: 1,
+            loadingBar: {},
         }
         expect(actual).toEqual(expected);
     });
@@ -254,7 +255,8 @@ describe('Redux Store', () => {
                     score: 1.8091958
                 },
             },
-            currentPaginationIndex: 2
+            currentPaginationIndex: 2,
+            loadingBar: {},
         };
 
         expect(actual).toEqual(expected);

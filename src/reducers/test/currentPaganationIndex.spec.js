@@ -1,5 +1,5 @@
 import expect from 'expect';
-import currentPaginationIndex from './currentPaginationIndex';
+import currentPaginationIndex from '../currentPaginationIndex';
 
 describe('Reducer: currentPaginationIndex', () => {
     function action(type) {

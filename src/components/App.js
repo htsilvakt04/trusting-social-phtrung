@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
+import LoadingBar from 'react-redux-loading';
 import { getInitData } from '../actions';
 import Loading from './Loading';
 import Navbar from './Navbar';
@@ -8,15 +9,33 @@ import ModalWrapper from './ModalWrapper';
 import Pagination from './Pagination';
 
 class App extends Component {
+    state = {
+        hasError: false
+    };
+
     componentDidMount() {
-        this.props.getInitData();
+        this.initData()
     }
+
+    initData = () => {
+        this.props.getInitData().catch( err => {
+            this.setState(() => ({hasError: true}))
+        });
+    };
+
     render() {
+
+        if (this.state.hasError) {
+            return <button onClick={this.initData} className="btn btn-default">Retry</button>
+        }
+
         if (this.props.isLoading) {
             return <Loading />;
         }
+
         return (
             <Fragment>
+                <LoadingBar/>
                 <Navbar />
                 <div className="container">
                     <Header />
