@@ -14,3 +14,7 @@ export const getAllArticles = (state) =>
 
 export const getCurrentPaginationIndex = (state) =>
     fromCurrentPaginationIndex.getCurrentIndex(state.currentPaginationIndex)
+
+export const getArticleById = (state, id) =>
+    fromById.getArticleById(state.byId, id)
+

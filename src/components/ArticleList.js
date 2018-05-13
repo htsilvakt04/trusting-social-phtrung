@@ -8,9 +8,9 @@ class ArticleList extends React.Component {
         window.scroll({top: 0, left: 0});
     }
     render () {
-        const { articles } = this.props;
+        const { articles, handleTriggerModal } = this.props;
 
-        return articles.map( article => <Article key={article._id} item={article}/>)
+        return articles.map( article => <Article triggerModal={handleTriggerModal} key={article._id} item={article}/>)
     }
 }
 function mapStateToProps(state) {

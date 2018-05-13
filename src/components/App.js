@@ -4,8 +4,8 @@ import { getInitData } from '../actions';
 import Loading from './Loading';
 import Navbar from './Navbar';
 import Header from './Header';
+import ModalWrapper from './ModalWrapper';
 import Pagination from './Pagination';
-import ArticleList from './ArticleList';
 
 class App extends Component {
     componentDidMount() {
@@ -22,7 +22,7 @@ class App extends Component {
                     <Header />
                     <div className="row">
                         <div className="col-sm-12 blog-main">
-                            <ArticleList />
+                            <ModalWrapper/>
                             <Pagination />
                         </div>
                     </div>
