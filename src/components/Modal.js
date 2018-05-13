@@ -4,10 +4,23 @@ import { generateImgUrl } from '../utils/helpers';
 import { getArticleById } from '../reducers';
 
 class Modal extends React.Component {
+    closeOutsideOverlay = (event) => {
+        if (this.modal.contains(event.target)) {
+            this.props.closeModal();
+        }
+    }
+    // handle click outside overlay
+    componentDidMount () {
+        document.addEventListener('click', this.closeOutsideOverlay, false);
+    }
+    componentWillUnmount() {
+        document.removeEventListener('click', this.closeOutsideOverlay, false);
+    }
+
     render () {
         const { isActive, closeModal, item } = this.props;
         return (
-            <div className={"modal" + (isActive ? " show" : " fade")} id="myModal" role="dialog">
+            <div className={"modal" + (isActive ? " show" : " fade")} ref={ node => (this.modal = node)} id="myModal" role="dialog">
                 <div className="modal-dialog modal-lg" role="document">
                     <div className="modal-content">
                         <div className="modal-header">
