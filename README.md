@@ -6,4 +6,4 @@
    
 #Run tests: (Currently test for Redux store and reducers):
 
-    1. npm run 
+    1. npm run test
