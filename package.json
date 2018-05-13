@@ -15,6 +15,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "babel-polyfill": "^6.26.0",
+    "cross-env": "^5.1.5",
     "eslint-config-airbnb": "^16.1.0",
     "normalizr": "^3.2.4",
     "react": "^16.2.0",
@@ -52,8 +53,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "test": "mocha src/**/*.spec.js --compilers js:babel-core/register",
-    "build": "SET NODE_ENV=production && webpack -p",
+    "test": "cross-env NODE_ENV=test mocha src/**/*.spec.js --compilers js:babel-core/register",
+    "build": "SET NODE_ENV=test && webpack -p",
     "deploy": "npm run build && firebase deploy",
     "firebase-init": "firebase login && firebase init",
     "deploy-raw": "firebase deploy"

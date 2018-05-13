@@ -7,6 +7,10 @@ export function getPercentage (count, total) {
 }
 
 export function generateImgUrl(item) {
-    const url = item.multimedia[0].url;
-    return `https://www.nytimes.com/${url}`;
+    let url = 'https://picsum.photos/200/300/?blur';
+    if (item.multimedia[0]) {
+        url = item.multimedia[0].url;
+        return `https://www.nytimes.com/${url}`;
+    }
+    return url;
 }

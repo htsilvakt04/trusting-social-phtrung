@@ -1,12 +1,9 @@
-import { loadingBarReducer } from 'react-redux-loading';
 import { combineReducers } from 'redux';
 import IDs from './IDs';
 import byId, * as fromById from './byId';
-import currentPaginationIndex from './currentPaginationIndex';
-
+import currentPaginationIndex, * as fromCurrentPaginationIndex from './currentPaginationIndex';
 
 export default combineReducers({
-    loadingBar: loadingBarReducer,
     IDs,
     byId,
     currentPaginationIndex,
@@ -14,3 +11,6 @@ export default combineReducers({
 
 export const getAllArticles = (state) =>
     fromById.getAll(state.byId)
+
+export const getCurrentPaginationIndex = (state) =>
+    fromCurrentPaginationIndex.getCurrentIndex(state.currentPaginationIndex)

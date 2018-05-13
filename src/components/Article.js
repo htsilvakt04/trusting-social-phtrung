@@ -1,5 +1,6 @@
 import React from 'react';
 import { generateImgUrl } from '../utils/helpers';
+
 const Article = ({ item }) => (
     <div className="blog-post">
         <h2 className="blog-post-title">{item.snippet}</h2>

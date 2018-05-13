@@ -175,18 +175,6 @@ li {
   margin-bottom: 6px;
 }
 
-@media (max-width: 500px) {
-  .poll-container {
-    width: 95%;
-    flex-direction: column;
-  }
-}
-
-.add-form {
-  margin: 0 auto;
-  width: 600px;
-}
-
 input {
   display: block;
   box-sizing: border-box;
@@ -226,4 +214,12 @@ input {
 }
 .input:focus {
   border-color: gray;
+}
+
+.pager li>button{
+  display: inline-block;
+  padding: 5px 14px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 15px;
 }
