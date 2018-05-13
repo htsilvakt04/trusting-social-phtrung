@@ -54,7 +54,7 @@
   "scripts": {
     "start": "react-scripts start",
     "test": "cross-env NODE_ENV=test mocha src/**/*.spec.js --compilers js:babel-core/register",
-    "build": "SET NODE_ENV=test && webpack -p",
+    "build": "cross-env NODE_ENV=production && webpack -p",
     "deploy": "npm run build && firebase deploy",
     "firebase-init": "firebase login && firebase init",
     "deploy-raw": "firebase deploy"
