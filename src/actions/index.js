@@ -6,10 +6,11 @@ import { getInitialData, getPageData } from '../utils/api';
 
 export const getInitData = () => (dispatch) =>
     getInitialData().then( response => {
+        console.log('dispatch stuf',dispatch);
         dispatch({
             type: 'GET_INIT_DATA',
             response: normalize(response, schema.articles),
-        })
+        });
     });
 
 export const getNextPageData = (currentPageIndex) => (dispatch) => {

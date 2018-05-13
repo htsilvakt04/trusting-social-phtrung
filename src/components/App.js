@@ -19,6 +19,7 @@ class App extends Component {
 
     initData = () => {
         this.props.getInitData().catch( err => {
+            console.log('err', err);
             this.setState(() => ({hasError: true}))
         });
     };

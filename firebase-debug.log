@@ -1,0 +1,32 @@
+[debug] [2018-05-13T17:31:09.400Z] ----------------------------------------------------------------------
+[debug] [2018-05-13T17:31:09.400Z] Command:       C:\Program Files\nodejs\node.exe E:\dev\trustsocial-phtrung\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-05-13T17:31:09.400Z] CLI Version:   3.18.4
+[debug] [2018-05-13T17:31:09.400Z] Platform:      win32
+[debug] [2018-05-13T17:31:09.400Z] Node Version:  v8.9.4
+[debug] [2018-05-13T17:31:09.400Z] Time:          Mon May 14 2018 00:31:09 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-05-13T17:31:09.400Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-05-13T17:31:09.416Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-05-13T17:31:09.416Z] > authorizing via signed-in user
+[debug] [2018-05-13T17:31:09.416Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/trustingsocial-phtrung  
+  
+ Mon May 14 2018 00:31:09 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-05-13T17:31:10.353Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-13T17:31:10.353Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/trustingsocial-phtrung/tokens  
+  
+ Mon May 14 2018 00:31:10 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-05-13T17:31:11.112Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-13T17:31:11.112Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/trustingsocial-phtrung  
+  
+ Mon May 14 2018 00:31:11 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-05-13T17:31:12.333Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'E:\dev\trustsocial-phtrung'...
+[info] 
+[debug] [2018-05-13T17:31:12.348Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/1049751906276/clients/_:getWebAppConfig  
+  
+ Mon May 14 2018 00:31:12 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-05-13T17:31:13.005Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: dist
+[info] +  hosting: Local server: http://localhost:5000
+

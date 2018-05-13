@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "trusting-social-phtrung"
+    "default": "trusting-social-phtrung",
+    "trusting-social-requirement": "trustingsocial-phtrung"
   }
 }

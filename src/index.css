@@ -212,3 +212,6 @@ input {
   display:block;
   margin:auto;
 }
+.loading-label {
+  font-size: 45px;
+}
