@@ -11,7 +11,7 @@ const Article = ({ item, triggerModal, isLoadingBar }) => (
         }}>
             <h2 className="blog-post-title">{item.snippet}</h2>
         </a>
-        <p className="blog-post-meta">{item.pub_date} by <a href="#">{item.source}</a></p>
+        <p className="blog-post-meta">{item.pub_date} by <a>{item.source}</a></p>
         <img src={generateImgUrl(item)} className="img-responsive" alt="img"/>
     </div>
 );

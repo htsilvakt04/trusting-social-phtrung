@@ -6,7 +6,7 @@ let config  = {
     entry: [ 'whatwg-fetch', 'babel-polyfill', './src/index.js' ],
     output: {
         path:  path.resolve(__dirname, 'dist'),
-        filename: 'silva.bundle.js',
+        filename: 'silva-1.bundle.js',
         publicPath: '/'
     },
     module: {

@@ -29,7 +29,7 @@ class Modal extends React.Component {
                         </div>
                         <div className="modal-body">
                             <div className="blog-post">
-                                <p className="blog-post-meta">{item.pub_date} by <a href="#">{item.source}</a></p>
+                                <p className="blog-post-meta">{item.pub_date} by <a>{item.source}</a></p>
                                 <div className="text-center">
                                     <img src={generateImgUrl(item)} className="img-responsive img-center" alt="img"/>
                                 </div>
