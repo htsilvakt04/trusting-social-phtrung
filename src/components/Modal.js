@@ -5,7 +5,7 @@ import { getArticleById } from '../reducers';
 
 class Modal extends React.Component {
     closeOutsideOverlay = (event) => {
-        if (this.modal.contains(event.target)) {
+        if (!this.modal.contains(event.target)) {
             this.props.closeModal();
         }
     }
@@ -20,8 +20,8 @@ class Modal extends React.Component {
     render () {
         const { isActive, closeModal, item } = this.props;
         return (
-            <div className={"modal" + (isActive ? " show" : " fade")} ref={ node => (this.modal = node)} id="myModal" role="dialog">
-                <div className="modal-dialog modal-lg" role="document">
+            <div className={"modal" + (isActive ? " show" : " fade")} id="myModal" role="dialog">
+                <div className="modal-dialog modal-lg"  ref={ node => (this.modal = node)}  role="document">
                     <div className="modal-content">
                         <div className="modal-header">
                             <button type="button" onClick={closeModal} className="close"  aria-label="Close"><span aria-hidden="true">&times;</span></button>
