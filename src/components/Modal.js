@@ -1,6 +1,7 @@
 import React from 'react';
 import PropsType from 'prop-types';
 import { connect } from 'react-redux';
+import moment from 'moment';
 import { generateImgUrl } from '../utils/helpers';
 import { getArticleById } from '../reducers';
 
@@ -30,7 +31,7 @@ class Modal extends React.Component {
                         </div>
                         <div className="modal-body">
                             <div className="blog-post">
-                                <p className="blog-post-meta">{item.pub_date} by <a>{item.source}</a></p>
+                                <p className="blog-post-meta">{moment(item.pub_date).fromNow()} by <a>{item.source}</a></p>
                                 <div className="text-center">
                                     <img src={generateImgUrl(item)} className="img-responsive img-center" alt="img"/>
                                 </div>
