@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import PropsType from 'prop-types';
 import { connect } from 'react-redux';
 import LoadingBar from 'react-redux-loading';
 import { getInitData } from '../actions';
@@ -52,10 +53,12 @@ class App extends Component {
     }
 }
 
+App.propTypes = {
+    isLoading: PropsType.bool.isRequired
+}
 function mapStateToProps({ IDs }) {
     return {
         isLoading: IDs.length < 1,
     };
 }
-
 export default connect(mapStateToProps, { getInitData })(App);

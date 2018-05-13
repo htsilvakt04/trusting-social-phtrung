@@ -1,4 +1,5 @@
 import React from 'react';
+import PropsType from 'prop-types';
 import { connect } from 'react-redux';
 import { getNextPageData, getPrevPageData } from '../actions';
 import { getCurrentPaginationIndex } from '../reducers';
@@ -9,7 +10,7 @@ const Pagination = ({currentPaginationIndex, getNextPageData, getPrevPageData}) 
             <li>
                 <button
                     disabled={currentPaginationIndex === 1}
-                    onClick={() => {getPrevPageData(currentPaginationIndex)}}>
+                    onClick={() => getPrevPageData(currentPaginationIndex)}>
                     Previous
                 </button>
             </li>
@@ -17,7 +18,7 @@ const Pagination = ({currentPaginationIndex, getNextPageData, getPrevPageData}) 
             <li>
                 <button
                     disabled={currentPaginationIndex > 15}
-                    onClick={() => {getNextPageData(currentPaginationIndex)}}>
+                    onClick={() => getNextPageData(currentPaginationIndex)}>
                     Next
                 </button>
             </li>
@@ -25,9 +26,15 @@ const Pagination = ({currentPaginationIndex, getNextPageData, getPrevPageData}) 
     </nav>
 );
 
+Pagination.propTypes = {
+    currentPaginationIndex: PropsType.number.isRequired,
+    getNextPageData: PropsType.func.isRequired,
+    getPrevPageData: PropsType.func.isRequired,
+}
+
 function mapStateToProps(state) {
     return {
-        currentPaginationIndex: getCurrentPaginationIndex(state)
-    }
+        currentPaginationIndex: getCurrentPaginationIndex(state),
+    };
 }
 export default connect(mapStateToProps, { getNextPageData, getPrevPageData })(Pagination);

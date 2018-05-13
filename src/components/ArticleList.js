@@ -4,13 +4,13 @@ import Article from './Article';
 import { getAllArticles, getIsLoadingBar } from '../reducers';
 
 class ArticleList extends React.Component {
-    componentDidUpdate () {
-        window.scroll({top: 0, left: 0});
+    componentDidUpdate() {
+        window.scroll({ top: 0, left: 0 });
     }
-    render () {
+    render() {
         const { articles, handleTriggerModal, isLoadingBar } = this.props;
 
-        return articles.map( article => <Article isLoadingBar={isLoadingBar} triggerModal={handleTriggerModal} key={article._id} item={article}/>)
+        return articles.map( article => <Article isLoadingBar={isLoadingBar} triggerModal={handleTriggerModal} key={article._id} item={article} />);
     }
 }
 function mapStateToProps(state) {

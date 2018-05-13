@@ -1,4 +1,5 @@
 import React from 'react';
+import PropsType from 'prop-types';
 import { connect } from 'react-redux';
 import { getInitData } from '../actions';
 import { getCurrentPaginationIndex } from '../reducers';
@@ -12,15 +13,21 @@ const Navbar = ({ getInitData, currentPaginationIndex }) => (
                         return;
                     }
                     event.preventDefault();
-                    getInitData()
+                    getInitData();
                 }}>Home</a>
             </nav>
         </div>
     </div>
-);
+)
+
+Navbar.propTypes = {
+    currentPaginationIndex: PropsType.number.isRequired,
+    getInitData: PropsType.func.isRequired,
+}
+
 function mapStateToProps(state) {
     return {
-        currentPaginationIndex: getCurrentPaginationIndex(state)
+        currentPaginationIndex: getCurrentPaginationIndex(state),
     };
 }
 export default connect(mapStateToProps, { getInitData })(Navbar);

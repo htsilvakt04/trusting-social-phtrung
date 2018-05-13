@@ -1,4 +1,5 @@
 import React from 'react';
+import PropsType from 'prop-types';
 import { connect } from 'react-redux';
 import { generateImgUrl } from '../utils/helpers';
 import { getArticleById } from '../reducers';
@@ -44,6 +45,12 @@ class Modal extends React.Component {
         )
     }
 }
+Modal.propTypes = {
+    item: PropsType.object.isRequired,
+    isActive: PropsType.bool.isRequired,
+    closeModal: PropsType.func.isRequired,
+}
+
 function mapStateToProps(state, { id }) {
     return {
         item: getArticleById(state, id)

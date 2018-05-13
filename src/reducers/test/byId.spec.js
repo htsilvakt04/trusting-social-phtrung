@@ -224,12 +224,11 @@ describe('Reducer: ById with the isAcceptedAction function', () => {
         const expected = false;
 
         expect(actual).toEqual(expected);
-    })
-
+    });
     it('should return true when receive accepted actions', () => {
         const actual = isAcceptedAction(stateBefore(), {type: 'GET_NEXT_PAGE_DATA'});
         const expected = true;
 
         expect(actual).toEqual(expected);
-    })
+    });
 })

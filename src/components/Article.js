@@ -1,4 +1,5 @@
 import React from 'react';
+import PropsType from 'prop-types';
 import { generateImgUrl } from '../utils/helpers';
 
 const Article = ({ item, triggerModal, isLoadingBar }) => (
@@ -7,13 +8,18 @@ const Article = ({ item, triggerModal, isLoadingBar }) => (
             if (isLoadingBar) {
                 return;
             }
-            triggerModal(item._id)
+            triggerModal(item._id);
         }}>
             <h2 className="blog-post-title">{item.snippet}</h2>
         </a>
         <p className="blog-post-meta">{item.pub_date} by <a>{item.source}</a></p>
-        <img src={generateImgUrl(item)} className="img-responsive" alt="img"/>
+        <img src={generateImgUrl(item)} className="img-responsive" alt="img" />
     </div>
-);
+)
 
+Article.propTypes = {
+    item: PropsType.object.isRequired,
+    triggerModal: PropsType.func.isRequired,
+    isLoadingBar: PropsType.bool,
+}
 export default Article;
